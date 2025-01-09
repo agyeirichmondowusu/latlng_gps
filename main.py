@@ -17,6 +17,11 @@ async def updateLocation(latlng: Request):
 
     return "received"
 
+@app.get("/get-lat-lng")
+async def getLatLng():
+	global latlng_data
+	return {"lat-lng": latlng_data}
+
 
 if __name__=="__main__":
     uvicorn.run(app, host="0.0.0.0", port=4000)
